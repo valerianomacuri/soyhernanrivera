@@ -8,7 +8,7 @@ const RESULTS = [
     alt: "Resultado de alumno: salida con dos chicas",
   },
   {
-    src: "/testimonials/testimonial-2.PNG",
+    src: "/testimonials/testimonial-2.jpg",
     alt: "Testimonio escrito de alumno",
   },
   {
