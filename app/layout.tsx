@@ -28,13 +28,13 @@ const siteUrl = resolveSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `Experiencia Origen — Taller de Daygame en Lima | ${business.coachName}`,
+  title: `Experiencia Origen — Día de prueba en Lima | ${business.coachName}`,
   description:
-    "Un día, 6 horas, experiencias reales: aprende a acercarte, conversar y conectar con naturalidad y respeto. Cupos limitados en Lima. Reserva por WhatsApp.",
+    "Vive un entrenamiento real en Lima, descubre tu nivel actual y recibe claridad sobre qué trabajar para avanzar. Día de prueba S/ 97 · cupos limitados.",
   openGraph: {
-    title: "Experiencia Origen — Deja de quedarte con las ganas de hablarle",
+    title: "Experiencia Origen — Deja de bloquearte cuando realmente importa",
     description:
-      "Taller presencial de un día en Lima para desbloquear tus habilidades sociales con práctica real, no teoría. Cupos limitados · S/ 97.",
+      "Día de prueba presencial en Lima para descubrir tu nivel real con práctica acompañada. Cupos limitados · S/ 97.",
     url: siteUrl,
     siteName: "Experiencia Origen",
     images: [
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Experiencia Origen",
-    description: "Taller de daygame en Lima. Cupos limitados · S/ 97.",
+    description: "Día de prueba en Lima. Cupos limitados · S/ 97.",
     images: ["/opengraph-image"],
   },
 };

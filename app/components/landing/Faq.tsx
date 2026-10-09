@@ -1,34 +1,33 @@
 import { ChevronDown } from "lucide-react";
-import business from "@/content/business.json";
 import { Reveal } from "@/app/components/landing/Reveal";
 import { SectionHeading } from "@/app/components/landing/SectionHeading";
 
 const FAQS = [
   {
-    question: "¿Y si soy muy tímido?",
+    question: "¿Y si me bloqueo o no sé qué decir cuando estoy frente a una mujer?",
     answer:
-      "Justamente para eso es el taller. Empezamos desde la base y avanzas a tu ritmo, acompañado por el coach en todo momento.",
+      "Precisamente para eso vienes. Aprenderás herramientas de comunicación y tendrás el acompañamiento de un coach para empezar a aplicarlas en situaciones reales.",
   },
   {
-    question: "¿Tengo que hablar con mujeres ese mismo día?",
+    question:
+      "¿Y si ya tengo experiencia con mujeres, pero quiero llevar mis habilidades sociales a otro nivel?",
     answer:
-      "Sí, pero a tu ritmo y acompañado. Nadie te empuja a hacer algo que no estés listo para hacer.",
+      "ORIGEN no es solo para principiantes. Evaluaremos tu nivel actual para identificar qué necesitas mejorar en conversación, atracción, confianza y relaciones sociales.",
   },
   {
-    question: "¿Cuántas personas van por grupo?",
-    answer: `Grupos reducidos de hasta ${business.slotsPerDate} personas por fecha, para que cada uno reciba atención real.`,
+    question: "¿Tengo que acercarme a mujeres durante el día de prueba?",
+    answer:
+      "La experiencia incluye interacciones reales, pero primero recibirás preparación y entrenamiento. Después saldrás acompañado por nuestro equipo, avanzando según tu nivel.",
   },
   {
-    question: "¿Qué edad tienen los participantes?",
-    answer: "La mayoría tiene entre 20 y 40 años.",
+    question: "¿Qué diferencia hay entre el día de prueba de S/97 y la mentoría completa?",
+    answer:
+      "El día de prueba te permite conocer nuestra metodología, entrenar y recibir un diagnóstico inicial. La mentoría es un proceso de 90 días diseñado para desarrollar esas habilidades con acompañamiento continuo.",
   },
   {
-    question: "¿Es un curso de manipulación?",
-    answer: "No. Todo el enfoque es respeto y autenticidad, nunca manipulación.",
-  },
-  {
-    question: "¿Qué pasa si no puedo asistir?",
-    answer: business.reschedulePolicy,
+    question: "¿Después del día de prueba estoy obligado a comprar la mentoría?",
+    answer:
+      "No. Tu inversión de S/97 cubre el día de prueba. Al finalizar tendrás mayor claridad sobre tu nivel y tus próximos pasos. Si quieres continuar, te explicaremos las opciones disponibles, sin ningún compromiso.",
   },
 ];
 

@@ -19,10 +19,10 @@ Next.js 16.3.8 (App Router, React 19, TypeScript, Tailwind CSS v4). The home pag
 
 - `app/page.tsx` — composes the 12 landing-page sections in order.
 - `app/components/landing/` — one component per section, plus shared helpers (`WhatsAppButton`, `StickyWhatsappButton`, `Reveal` scroll-animation wrapper, `SectionHeading`, `TestimonialCard`, `InteractionVideo`, `YouTubeEmbed`).
-- `app/lib/whatsapp.ts` — builds the `wa.me` link (reads `NEXT_PUBLIC_WHATSAPP_NUMBER`/`NEXT_PUBLIC_WHATSAPP_MESSAGE`, merges `utm_*` query params).
+- `app/lib/whatsapp.ts` — exports the fixed `wa.me/message/...` CTA link.
 - `app/lib/analytics.ts` — Meta Pixel / GA4 lead-tracking helper (reads `NEXT_PUBLIC_META_PIXEL_ID`/`NEXT_PUBLIC_GA4_MEASUREMENT_ID`).
 - `content/business.json` — editable business facts (coach name/bio, workshop date, slots, practice zone, reschedule policy) consumed by the section components; business-specific values are intentionally left as bracketed placeholders (`[NOMBRE]`, `[FECHA]`, etc.) for the business owner to fill in.
-- `.env.local.example` — template for the required `NEXT_PUBLIC_*` env vars (WhatsApp number/message, Pixel/GA4 IDs, site URL); copy to `.env.local` with real values before launch.
+- `.env.local.example` — template for the required `NEXT_PUBLIC_*` env vars (Pixel/GA4 IDs, site URL); copy to `.env.local` with real values before launch.
 - `app/globals.css` — Tailwind v4 theme tokens (dark/gold palette: `--color-ink`, `--color-gold`, etc. via `@theme inline`) plus the `.reveal` scroll-animation CSS, no separate `tailwind.config.*`.
 - `app/layout.tsx` — Oswald (display) + Inter (body) fonts, Open Graph/metadata, GA4 + Meta Pixel base `<Script>` tags.
 - `app/opengraph-image.tsx` — generates the share-preview image via `next/og` (no static asset needed).

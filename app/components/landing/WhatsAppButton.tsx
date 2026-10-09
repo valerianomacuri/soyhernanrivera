@@ -15,8 +15,6 @@ export function WhatsAppButton({
   className?: string;
   variant?: "solid" | "outline";
 }) {
-  const baseHref = getWhatsAppLink();
-
   const variantClasses =
     variant === "solid"
       ? "bg-gold text-ink hover:bg-gold/90"
@@ -24,14 +22,10 @@ export function WhatsAppButton({
 
   return (
     <a
-      href={baseHref}
+      href={getWhatsAppLink()}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={(event) => {
-        const utmParams = new URLSearchParams(window.location.search);
-        event.currentTarget.href = getWhatsAppLink(utmParams);
-        trackLeadEvent(source);
-      }}
+      onClick={() => trackLeadEvent(source)}
       className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-display uppercase tracking-wide text-sm transition-colors ${variantClasses} ${className}`}
     >
       <MessageCircle className="h-4 w-4" />

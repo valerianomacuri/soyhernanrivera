@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
-export function InteractionVideo() {
+export function InteractionVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
 
@@ -12,15 +12,15 @@ export function InteractionVideo() {
   }, [isMuted]);
 
   return (
-    <div className="relative aspect-[4/5] h-full overflow-hidden rounded-lg border border-gold-soft">
+    <div className="relative mx-auto aspect-[9/16] max-h-[80vh] max-w-sm overflow-hidden rounded-lg border border-gold-soft bg-black">
       <video
         ref={videoRef}
-        src="/conversation-1.mp4"
+        src={src}
         autoPlay
         loop
         muted
         playsInline
-        className="h-full w-full object-cover"
+        className="h-full w-full object-contain"
       />
       <button
         type="button"

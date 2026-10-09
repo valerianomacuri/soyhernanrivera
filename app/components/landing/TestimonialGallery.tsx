@@ -4,16 +4,23 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { CarouselNav } from "@/app/components/landing/CarouselNav";
+import { useVisibleCount } from "@/app/lib/useVisibleCount";
 
 export function TestimonialGallery({
   testimonials,
 }: {
-  testimonials: { id: number }[];
+  testimonials: { src: string; alt: string }[];
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [mounted, setMounted] = useState(false);
+  const [requestedPage, setRequestedPage] = useState(0);
+  const perPage = useVisibleCount();
 
-  useEffect(() => setMounted(true), []);
+  const pages = Math.ceil(testimonials.length / perPage);
+  const page = Math.min(requestedPage, pages - 1);
+  const start = Math.min(page * perPage, Math.max(testimonials.length - perPage, 0));
+  const visible = testimonials.slice(start, start + perPage);
+  const goToPage = (step: number) => setRequestedPage((page + step + pages) % pages);
 
   const goTo = (step: number) => {
     setOpenIndex((current) => {
@@ -36,19 +43,19 @@ export function TestimonialGallery({
 
   return (
     <>
-      <div className="mt-12 flex gap-4 overflow-x-auto px-6 pb-2 snap-x">
-        {testimonials.map((testimonial, index) => (
+      <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3">
+        {visible.map((testimonial, i) => (
           <button
-            key={testimonial.id}
+            key={testimonial.src}
             type="button"
-            onClick={() => setOpenIndex(index)}
-            className="group relative aspect-9/16 w-72 shrink-0 snap-center overflow-hidden rounded-lg border border-gold-soft"
+            onClick={() => setOpenIndex(start + i)}
+            className="group relative mx-auto aspect-9/16 w-full max-w-xs overflow-hidden rounded-lg border border-gold-soft md:max-w-none"
           >
             <Image
-              src={`/testimonial-${testimonial.id}.jpg`}
-              alt={`Alumno ${testimonial.id}`}
+              src={testimonial.src}
+              alt={testimonial.alt}
               fill
-              sizes="288px"
+              sizes="(min-width: 768px) 33vw, 320px"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
@@ -56,8 +63,16 @@ export function TestimonialGallery({
         ))}
       </div>
 
-      {mounted &&
-        openIndex !== null &&
+      <CarouselNav
+        index={page}
+        count={pages}
+        onPrev={() => goToPage(-1)}
+        onNext={() => goToPage(1)}
+        onSelect={setRequestedPage}
+        label="página"
+      />
+
+      {openIndex !== null &&
         createPortal(
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
@@ -101,8 +116,8 @@ export function TestimonialGallery({
               onClick={(event) => event.stopPropagation()}
             >
               <Image
-                src={`/testimonial-${testimonials[openIndex].id}.jpg`}
-                alt={`Alumno ${testimonials[openIndex].id}`}
+                src={testimonials[openIndex].src}
+                alt={testimonials[openIndex].alt}
                 fill
                 sizes="90vw"
                 className="object-contain"
