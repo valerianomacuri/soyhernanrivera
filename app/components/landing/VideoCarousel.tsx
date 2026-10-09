@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { VideoPlayer } from "@/app/components/landing/VideoPlayer";
 import { CarouselNav } from "@/app/components/landing/CarouselNav";
 
 export function VideoCarousel({
@@ -16,15 +17,7 @@ export function VideoCarousel({
 
   return (
     <div className="mx-auto mt-12 max-w-2xl px-6">
-      <video
-        key={current.src}
-        src={current.src}
-        poster={current.poster}
-        controls
-        playsInline
-        preload="metadata"
-        className="aspect-video w-full rounded-lg border border-gold-soft bg-black object-contain"
-      />
+      <VideoPlayer key={current.src} src={current.src} poster={current.poster} />
 
       <CarouselNav
         index={index}

@@ -54,3 +54,31 @@ summary::-webkit-details-marker {
     transform: none;
   }
 }
+
+/* Custom video progress bar (VideoPlayer) */
+.video-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 9999px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--color-gold) var(--progress, 0%),
+    rgb(245 243 238 / 0.25) var(--progress, 0%)
+  );
+}
+.video-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 9999px;
+  background: var(--color-gold);
+}
+.video-range::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--color-gold);
+}

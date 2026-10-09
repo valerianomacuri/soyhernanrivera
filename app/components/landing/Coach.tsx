@@ -1,6 +1,7 @@
 import Image from "next/image";
 import business from "@/content/business.json";
 import { Reveal } from "@/app/components/landing/Reveal";
+import { VideoPlayer } from "@/app/components/landing/VideoPlayer";
 import { SectionHeading } from "@/app/components/landing/SectionHeading";
 
 export function Coach() {
@@ -32,14 +33,7 @@ export function Coach() {
       </div>
 
       <Reveal delay={160} className="mt-10">
-        <video
-          src="/videos/my-story.mp4"
-          poster="/profile.jpg"
-          controls
-          playsInline
-          preload="metadata"
-          className="aspect-video w-full rounded-lg border border-gold-soft bg-black object-contain"
-        />
+        <VideoPlayer src="/videos/my-story.mp4" poster="/profile.jpg" />
       </Reveal>
     </section>
   );
