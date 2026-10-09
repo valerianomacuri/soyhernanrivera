@@ -1,3 +1,4 @@
+import { videoUrl } from "@/app/lib/videos";
 import { Reveal } from "@/app/components/landing/Reveal";
 import { SectionHeading } from "@/app/components/landing/SectionHeading";
 import { InteractionVideo } from "@/app/components/landing/InteractionVideo";
@@ -13,7 +14,7 @@ export function DayPreview() {
         />
       </Reveal>
       <Reveal delay={120} className="mt-12">
-        <InteractionVideo src="/videos/video-students.mp4" />
+        <InteractionVideo src={videoUrl("video-students.mp4")} />
       </Reveal>
     </section>
   );

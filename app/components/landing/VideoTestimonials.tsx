@@ -1,9 +1,10 @@
+import { videoUrl } from "@/app/lib/videos";
 import { Reveal } from "@/app/components/landing/Reveal";
 import { SectionHeading } from "@/app/components/landing/SectionHeading";
 import { VideoCarousel } from "@/app/components/landing/VideoCarousel";
 
 const VIDEOS = [1, 2, 3, 4, 5, 6].map((id) => ({
-  src: `/videos/testimonial-${id}.mp4`,
+  src: videoUrl(`testimonial-${id}.mp4`),
 }));
 
 export function VideoTestimonials() {

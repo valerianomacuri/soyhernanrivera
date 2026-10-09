@@ -1,3 +1,4 @@
+import { videoUrl } from "@/app/lib/videos";
 import Image from "next/image";
 import business from "@/content/business.json";
 import { Reveal } from "@/app/components/landing/Reveal";
@@ -33,7 +34,7 @@ export function Coach() {
       </div>
 
       <Reveal delay={160} className="mt-10">
-        <VideoPlayer src="/videos/my-story.mp4" poster="/profile.jpg" />
+        <VideoPlayer src={videoUrl("my-story.mp4")} poster="/profile.jpg" />
       </Reveal>
     </section>
   );
