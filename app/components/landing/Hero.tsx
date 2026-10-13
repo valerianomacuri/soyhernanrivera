@@ -19,24 +19,22 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
         <h1 className="font-display text-4xl uppercase leading-tight text-ivory sm:text-6xl">
-          Deja de bloquearte cuando realmente importa
+          DEJA DE BLOQUEARTE CON LAS MUJERES QUE REALMENTE TE ATRAEN{" "}
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg text-gray-text">
-          Vive la experiencia Origen y conoce una metodología para convertirte
-          en el hombre que actúa con libertad y seguridad con las mujeres que
-          realmente te atraen, lidera círculos sociales sin que el miedo, el
-          rechazo o el sobrepensamiento decidan por ti.
+          Una metodología utilizada por más de 340 hombres para desarrollar
+          seguridad, conectar con mujeres y dejar de sobrepensar cada
+          interacción.
         </p>
         <p className="mt-6 font-display text-sm uppercase tracking-wide text-gold">
-          Vive un día de prueba Origen — S/97
+          6 HORAS DE ENTRENAMIENTO REAL · S/97{" "}
         </p>
         <div className="mt-6 flex justify-center">
           <WhatsAppButton label="Quiero vivir mi día de prueba" source="hero" />
         </div>
         <p className="mx-auto mt-4 max-w-md text-sm text-gray-text">
-          Vive un entrenamiento real en la ciudad de Lima junto a nuestra
-          comunidad, descubre cuál es tu nivel actual y recibe claridad sobre
-          qué necesitas trabajar para avanzar.
+          Habla con un asesor para conocer cómo funciona y descubrir si esta
+          experiencia es para ti.
         </p>
       </div>
     </section>
