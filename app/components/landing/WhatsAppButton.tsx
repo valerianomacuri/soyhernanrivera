@@ -2,7 +2,7 @@
 
 import { MessageCircle } from "lucide-react";
 import { getWhatsAppLink } from "@/app/lib/whatsapp";
-import { trackLeadEvent } from "@/app/lib/analytics";
+import { trackContact } from "@/app/lib/analytics";
 
 export function WhatsAppButton({
   label,
@@ -25,7 +25,7 @@ export function WhatsAppButton({
       href={getWhatsAppLink()}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackLeadEvent(source)}
+      onClick={() => trackContact(source)}
       className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-display uppercase tracking-wide text-sm transition-colors ${variantClasses} ${className}`}
     >
       <MessageCircle className="h-4 w-4" />
