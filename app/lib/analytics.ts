@@ -29,21 +29,32 @@ export function isConfigured(id: string) {
   return id !== "";
 }
 
+// Trackers can be missing, blocked, or replaced by extensions; one failing
+// must never break the click handler or the other trackers.
+function call(name: "fbq" | "gtag" | "clarity", ...args: unknown[]) {
+  try {
+    const fn = window[name];
+    if (typeof fn === "function") fn(...args);
+  } catch {
+    // ignore tracker failures
+  }
+}
+
 export function trackContact(source: string) {
   if (typeof window === "undefined") return;
   const utms = getUtms();
-  window.fbq?.("track", "Contact", { content_name: source, ...utms });
-  window.gtag?.("event", "generate_lead", { button_source: source, ...utms });
-  window.clarity?.("event", `whatsapp_click_${source}`);
+  call("fbq", "track", "Contact", { content_name: source, ...utms });
+  call("gtag", "event", "generate_lead", { button_source: source, ...utms });
+  call("clarity", "event", `whatsapp_click_${source}`);
 }
 
 export function revokeTracking() {
-  window.fbq?.("consent", "revoke");
-  window.gtag?.("consent", "update", {
+  call("fbq", "consent", "revoke");
+  call("gtag", "consent", "update", {
     analytics_storage: "denied",
     ad_storage: "denied",
     ad_user_data: "denied",
     ad_personalization: "denied",
   });
-  window.clarity?.("consent", false);
+  call("clarity", "consent", false);
 }
