@@ -6,18 +6,28 @@ export function Hero() {
     <section className="relative flex min-h-screen items-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/hero-2.jpg"
+          src="/hero-mobile.jpeg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover backdrop-opacity-60"
+          className="object-cover object-center backdrop-opacity-60 min-[960px]:hidden"
+        />
+        <Image
+          src="/hero-desktop.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="hidden object-cover object-center backdrop-opacity-60 min-[960px]:block"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/80" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
+        <p className="mb-4 font-display text-sm uppercase tracking-widest text-gold">
+          Experiencia Origen · Lima, Perú
+        </p>
         <h1 className="font-display text-4xl uppercase leading-tight text-ivory sm:text-6xl">
           DEJA DE BLOQUEARTE CON LAS MUJERES QUE REALMENTE TE ATRAEN{" "}
         </h1>
